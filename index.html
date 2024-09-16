@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <title>Create Tenant</title>
+</head>
+<body>
+    <div class="container">
+    <h2>Create New Tenant</h2>
+    <form action="http://localhost:4000/tenant" method="post">
+        <label for="title">Title:</label>
+        <select id="title" name="title" onchange="showOtherTextBox(this)">
+            <option value="Mx">Mx</option>
+            <option value="Mr">Mr</option>
+            <option value="Mrs">Mrs</option>
+            <option value="Ms">Ms</option>
+            <option value="Miss">Miss</option>
+            <option value="Dr">Dr</option>
+            <option value="Other">Other...</option>
+        </select><br><br>
+        
+        <label id="otherTitleLabel" for="otherTitle">Other Title:</label>
+        <input type="text" id="otherTitle" name="title"><br><br>
+        
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName"><br><br>
+        
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName"><br><br>
+        
+        <label for="phoneNumber">Mobile:</label>
+        <input type="text" id="phoneNumber" name="phoneNumber"><br><br>
+        
+        <label for="emailAddress">Email:</label>
+        <input type="email" id="emailAddress" name="emailAddress"><br><br>
+        
+        <label for="homeAddressId">Home Address ID:</label>
+        <input type="text" id="homeAddressId" name="homeAddress"><br><br>
+    
+        <input type="submit" name="submit" value="Create Tenant">
+    </form>
+</div>
+
+<div class="container">
+    <h2>Create New Landlord</h2>
+    <form action="http://localhost:4000/landlord" method="post">
+        <div class="form-group">
+            <label for="title">Title:</label>
+            <select id="title" name="title" onchange="showOtherTextBox2(this)">
+                <option value="Mx">Mx</option>
+                <option value="Mr">Mr</option>
+                <option value="Mrs">Mrs</option>
+                <option value="Ms">Ms</option>
+                <option value="Miss">Miss</option>
+                <option value="Dr">Dr</option>
+                <option value="Other">Other...</option>
+            </select>
+            <label id="otherTitleLabel2" for="otherTitle2">Other Title:</label>
+            <input type="text" id="otherTitle2" name="title">
+        </div>
+    
+        <div class="form-group">
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName">
+        </div>
+    
+        <div class="form-group">
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName">
+        </div>
+    
+        <div class="form-group">
+            <label for="phoneNumber">Mobile:</label>
+            <input type="text" id="phoneNumber" name="phoneNumber">
+        </div>
+    
+        <div class="form-group">
+            <label for="emailAddress">Email:</label>
+            <input type="email" id="emailAddress" name="emailAddress">
+        </div>
+    
+        <div class="form-group">
+            <label for="dateOfBirth">Date of Birth:</label>
+            <input type="date" id="dateOfBirth" name="dateOfBirth">
+        </div>
+    
+        <div class="form-group">
+            <label for="councilPermission">Council Permission:</label>
+            <input type="checkbox" id="councilPermission" name="councilPermission" value="true">
+        </div>
+    
+        <div class="form-group">
+            <label for="contactPermission">Contact Permission:</label>
+            <input type="checkbox" id="contactPermission" name="contactPermission" value="true">
+        </div>
+        
+        <div class="form-group">
+            <label for="homeAddressId">Home Address ID:</label>
+            <input type="text" id="homeAddressId" name="homeAddressId">
+        </div>
+    
+        <input type="submit" name="submit" value="Create Landlord">
+    </form>
+    
+</div>
+
+<h2>Create New Contract</h2>
+<form action="http://localhost:4000/contract" method="post">
+    <label for="contractDate">Contract Date:</label>
+    <input type="date" id="contractDate" name="contractDate" required><br><br>
+    
+    <label for="propertyAddress">Property Address:</label>
+    <input type="text" id="propertyAddress" name="propertyAddress" required><br><br>
+    
+    <label for="tenants">Tenants:</label>
+    <input type="text" id="tenants" name="tenants" required><br><br>
+    
+    <label for="landlord">Landlord:</label>
+    <input type="text" id="landlord" name="landlord" required><br><br>
+    
+    <label for="feeMonthly">Monthly Fee:</label>
+    <input type="number" id="feeMonthly" name="feeMonthly" required><br><br>
+    
+    <label for="propertyDoorNumber">Property Door Number:</label>
+    <input type="text" id="propertyDoorNumber" name="propertyDoorNumber"><br><br>
+    
+    <label for="contractLength">Contract Length:</label>
+    <input type="text" id="contractLength" name="contractLength" required><br><br>
+    
+    <label for="propertyType">Property Type:</label>
+    <select id="propertyType" name="propertyType" onchange="showOtherTextBox(this)">
+        <option value="Detached">Detached</option>
+        <option value="Semi-Detached">Semi-Detached</option>
+        <option value="Apartment">Apartment</option>
+        <option value="Other">Other...</option>
+    </select><br><br>
+    
+    <label id="otherTypeLabel3" for="otherType3">Other Type:</label>
+    <input type="text" id="otherType3" name="Other"><br><br>
+    
+    <input type="submit" name="submit" value="Create Contract">
+</form>
+
+
+
+<h2>Get Tenant Details</h2>
+<form action="http://localhost:4000/tenant" method="get">
+    <label for="firstName">First Name:</label>
+    <input type="text" id="firstName" name="firstName" required><br><br>
+    <label for="lastName">Last Name:</label>
+    <input type="text" id="lastName" name="lastName" required><br><br>
+    <input type="submit" name="submit" value="Search">
+</form>
+
+
+<h2>Get Landlord Details</h2>
+<form action="http://localhost:4000/landlord" method="get">
+    <label for="firstName">First Name:</label>
+    <input type="text" id="firstName" name="firstName" required><br><br>
+    <label for="lastName">Last Name:</label>
+    <input type="text" id="lastName" name="lastName" required><br><br>
+    <input type="submit" name="submit" value="Search">
+</form>
+<!--
+    <h2>Delete Tenant</h2>
+<form id="deleteTenant">
+    <label for="firstName">First Name:</label>
+    <input type="text" id="firstName" name="firstName" required><br><br>
+    <label for="lastName">Last Name:</label>
+    <input type="text" id="lastName" name="lastName" required><br><br>
+    <input type="submit" name="submit" value="Delete">
+</form>
+
+<h2>Delete Landlord</h2>
+<form id="deleteForm">
+    <label for="firstName">First Name:</label>
+    <input type="text" id="firstName" name="firstName" required><br><br>
+    <label for="lastName">Last Name:</label>
+    <input type="text" id="lastName" name="lastName" required><br><br>
+    <input type="submit" name="submit" value="Delete">
+</form>
+-->
+
+<div id="resultContainer"></div>
+
+    <script>
+        function showOtherTextBox(select) {
+            var otherTitleLabel = document.getElementById("otherTitleLabel");
+            var otherTitleInput = document.getElementById("otherTitle");
+
+            if (select.value === "Other") {
+                otherTitleLabel.style.display = "inline";
+                otherTitleInput.style.display = "inline";
+                // Set the selected option to "Other" only if the otherTitle input is visible
+                select.value = "Other";
+            } else {
+                otherTitleLabel.style.display = "none";
+                otherTitleInput.style.display = "none";
+            }
+        }
+
+        function showOtherTextBox2(select) {
+            var otherTitleLabel = document.getElementById("otherTitleLabel2");
+            var otherTitleInput = document.getElementById("otherTitle2");
+
+            if (select.value === "Other") {
+                otherTitleLabel.style.display = "inline";
+                otherTitleInput.style.display = "inline";
+                // Set the selected option to "Other" only if the otherTitle2 input is visible
+                select.value = "Other";
+            } else {
+                otherTitleLabel.style.display = "none";
+                otherTitleInput.style.display = "none";
+            }
+        }
+
+        function showOtherTextBox3(select) {
+            var otherTitleLabel = document.getElementById("otherTypeLabel3");
+            var otherTitleInput = document.getElementById("otherType3");
+
+            if (select.value === "Other") {
+                otherTitleLabel.style.display = "inline";
+                otherTitleInput.style.display = "inline";
+                // Set the selected option to "Other" only if the otherType3 input is visible
+                select.value = "Other";
+            } else {
+                otherTitleLabel.style.display = "none";
+                otherTitleInput.style.display = "none";
+            }
+        }
+
+  /*      document.getElementById("deleteTenant").addEventListener("submit", async function(event) {
+        event.preventDefault(); // Prevent form submission
+
+        const firstName = document.getElementById("firstName").value;
+        const lastName = document.getElementById("lastName").value;
+
+        try {
+            // Send a DELETE request to delete the tenant
+            const response = await fetch(`/tenant?firstName=${encodeURIComponent(firstName)}&lastName=${encodeURIComponent(lastName)}`, {
+                method: 'DELETE'
+            });
+            const data = await response.text();
+
+            if (response.ok) {
+                console.log("Tenant deleted successfully:", data);
+                alert("Tenant deleted successfully");
+            } else {
+                console.error("Failed to delete tenant:", data);
+                alert("Failed to delete tenant: " + data);
+            }
+        } catch (error) {
+            console.error("Failed to delete tenant:", error.message);
+            alert("Failed to delete tenant: " + error.message);
+        }
+        });
+
+
+        document.getElementById("searchTenant").addEventListener("submit", async function(event) {
+        event.preventDefault(); // Prevent form submission
+
+        const firstName = document.getElementById("firstName").value;
+        const lastName = document.getElementById("lastName").value;
+
+        // Send a GET request to retrieve tenant and address details
+        const response = await fetch(`/tenant?firstName=${encodeURIComponent(firstName)}&lastName=${encodeURIComponent(lastName)}`);
+        const data = await response.json();
+
+        if (response.ok) {
+            // Display the tenant and address details
+            const resultContainer = document.getElementById("resultContainer");
+            resultContainer.innerHTML = `
+                <h3>Tenant Details:</h3>
+                <p>First Name: ${data.tenant.firstName}</p>
+                <p>Last Name: ${data.tenant.lastName}</p>
+                <h3>Address Details:</h3>
+                <p>Address Line 1: ${data.address.addressLine1}</p>
+                <p>Town: ${data.address.town}</p>
+                <p>County: ${data.address.county}</p>
+            `;
+        } else {
+            // Display error message if tenant is not found
+            const resultContainer = document.getElementById("resultContainer");
+            resultContainer.innerHTML = `<p>${data.message}</p>`;
+        }
+    });*/
+</script>
+</body>
+</html>
